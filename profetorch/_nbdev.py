@@ -35,6 +35,6 @@ modules = ["model/blocks.py",
            "losses.py",
            "model/model.py"]
 
-git_url = "https://github.com/fastai/profetorch/tree/master/"
+git_url = "https://github.com/sachinruk/profetorch/tree/master/"
 
 def custom_doc_links(name): return None

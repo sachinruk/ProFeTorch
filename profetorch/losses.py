@@ -22,11 +22,12 @@ def mae(y_pred, y, weights=None):
 
 def q_loss(y_pred, y, quantiles = [0.05, 0.5, 0.95], weights=None):
     """
-    Sum of tilted_loss
-    y_pred: Predicted Value
-    y: Target
-    quantiles: Quantile
-    weights(optional): Weighting of prediction-target pair.
+    Sum of tilted_loss for `quantiles`.
+    Parameters:
+    - y_pred: Predicted Value
+    - y: Target
+    - quantiles: Quantile
+    - weights(optional): Weighting of prediction-target pair.
     """
     if isinstance(quantiles, list):
         e = 0
