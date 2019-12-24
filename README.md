@@ -35,10 +35,10 @@ u \quad \text{if } y > u
 where $T(t)$ is the trend line, $S(t)$ are the seasonal components composed of a fourier sum, $F(x)$ is a linear function which weights features that is not related to time.
 
 The task is therefore to find the parameters $a, m, \cup_n a_n, \cup_n b_n, w$ that minimises a loss function $l(\hat{y}, y)$. The default is set to minimise $l1$ loss $\frac{1}{N}\sum_{i=1}^N |y_i - \hat{y_i}|$ so that the reliance on outliers is minimised. By default we also calculate the 5th and 95th quantile by minimising the tilted loss function. The quantile functions are calculated as:
-\begin{align}
+\begin{aligned}
 y_5 &= b(\hat{y} - (m_5 t + a_5)|l,u) \\
 y_{95} &= b(\hat{y} + (m_{95} t + a_{95})|l,u)
-\end{align}
+\end{aligned}
 
 ## Install
 
