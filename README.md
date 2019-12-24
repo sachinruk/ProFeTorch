@@ -42,140 +42,6 @@ y_{95} &= b(\hat{y} + (m_{95} t + a_{95})|l,u)
 
 `pip install profetorch`
 
-## How to use
-
-Fill me in please! Don't forget code examples:
-<div class="codecell" markdown="1">
-<div class="input_area" markdown="1">
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-%load_ext autoreload
-%autoreload 2
-%matplotlib inline
-```
-
-</div>
-
-</div>
-<div class="codecell" markdown="1">
-<div class="input_area" markdown="1">
-
-```python
-url = "https://raw.githubusercontent.com/facebook/prophet/master/examples/example_wp_log_peyton_manning.csv"
-df = pd.read_csv(url)
-df['ds'] = pd.to_datetime(df['ds'])
-print(df.shape)
-df.head()
-```
-
-</div>
-<div class="output_area" markdown="1">
-
-    (2905, 2)
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ds</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2007-12-10</td>
-      <td>9.590761</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2007-12-11</td>
-      <td>8.519590</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2007-12-12</td>
-      <td>8.183677</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2007-12-13</td>
-      <td>8.072467</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2007-12-14</td>
-      <td>7.893572</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-</div>
-
-</div>
-<div class="codecell" markdown="1">
-<div class="input_area" markdown="1">
-
-```python
-plt.plot(df['ds'], df['y'])
-plt.show()
-```
-
-</div>
-<div class="output_area" markdown="1">
-
-    /opt/miniconda3/lib/python3.7/site-packages/pandas/plotting/_matplotlib/converter.py:103: FutureWarning: Using an implicitly registered datetime converter for a matplotlib plotting method. The converter was registered by pandas on import. Future versions of pandas will require you to explicitly register matplotlib converters.
-    
-    To register the converters:
-    	>>> from pandas.plotting import register_matplotlib_converters
-    	>>> register_matplotlib_converters()
-      warnings.warn(msg, FutureWarning)
-
-
-
-![png](output_7_1.png)
-
-
-</div>
-
-</div>
-<div class="codecell" markdown="1">
-<div class="input_area" markdown="1">
-
-```python
-train_len = int(0.8*len(df))
-train_df = df[:train_len]
-test_df = df[train_len:]
-```
-
-</div>
-
-</div>
-
 ## ProFeTorch Training
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
@@ -198,45 +64,9 @@ model.fit(train_df)
 
 
 
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='9' class='' max='30', style='width:300px; height:20px; vertical-align: middle;'></progress>
-  30.00% [9/30 00:04<00:10]
-</div>
 
 
-
-<div>
-    <style>
-        /* Turns off some styling */
-        progress {
-            /* gets rid of default border in Firefox and Opera. */
-            border: none;
-            /* Needs to be in here for Safari polyfill so background images work as expected. */
-            background-size: auto;
-        }
-        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-            background: #F44336;
-        }
-    </style>
-  <progress value='0' class='' max='14', style='width:300px; height:20px; vertical-align: middle;'></progress>
-  0.00% [0/14 00:00<00:00]
-</div>
-
-
-
-    Epoch 9/30 Training Loss: 0.4450, Validation Loss: 0.6734
+    Epoch 30/30 Training Loss: 0.3687, Validation Loss: 0.6105
 
 </div>
 
@@ -254,6 +84,13 @@ plt.plot(test_df['ds'], y_pred[train_len:,1], c='g', label='Test Set')
 plt.fill_between(test_df['ds'], y_pred[train_len:,0], y_pred[train_len:,2], alpha=0.5)
 plt.show()
 ```
+
+</div>
+<div class="output_area" markdown="1">
+
+
+![png](output_5_0.png)
+
 
 </div>
 
