@@ -19,7 +19,7 @@ This is an alternative implementation of prophet which uses quantile regression 
 - Can add any other set of features to the time series.
 
 The time series is implemented as follows:
-\begin{align}
+\begin{aligned}
 y &= b(T(t) + S(t) + F(x)|l,u) \\
 T(t) &= mt + a \\
 S(t) &= \sum_{n=1}^N\left(a_n \cos\left(\frac{2\pi nt}{P}\right) + b_n \sin\left(\frac{2\pi nt}{P}\right)\right) \\
@@ -29,7 +29,7 @@ l \quad \text{if } y < l \\
 y \quad \text{if } l < y < u \\
 u \quad \text{if } y > u
 \end{cases}
-\end{align}
+\end{aligned}
 where $T(t)$ is the trend line, $S(t)$ are the seasonal components composed of a fourier sum, $F(x)$ is a linear function which weights features that is not related to time.
 
 The task is therefore to find the parameters $a, m, \cup_n a_n, \cup_n b_n, w$ that minimises a loss function $l(\hat{y}, y)$. The default is set to minimise $l1$ loss $\frac{1}{N}\sum_{i=1}^N |y_i - \hat{y_i}|$ so that the reliance on outliers is minimised. By default we also calculate the 5th and 95th quantile by minimising the tilted loss function. The quantile functions are calculated as:

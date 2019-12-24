@@ -20,26 +20,26 @@ from ..callbacks.callbacks import *
 
 #Cell
 class Model(nn.Module):
+    """
+    Default Model Wrapper
+    parameters:
+    - df: dataset used in training dataset.
+    - model (optional): how to model time series. Default: DefaultModel.
+    - loss (optional): loss function: Default l1 loss.
+    - bs (optional): batchsize
+    - alpha (optional): l2 weight decay
+    - beta (optional): l1 weight decay
+    - silent: whether to silence output or not
+
+    Usage:
+    ```
+    model = Model(train_df)
+    model.fit(train_df)
+    y = model.predict(test_df)
+    ```
+    """
     def __init__(self, df, model=None, model_args=None, quantiles=[0.05, 0.5, 0.95],
                  loss=None, bs=128, epochs=100, lr=0.3, alpha=0, beta=0.1, silent=True):
-        """
-        Default Model Wrapper
-        parameters:
-        - df: dataset used in training dataset.
-        - model (optional): how to model time series. Default: DefaultModel.
-        - loss (optional): loss function: Default l1 loss.
-        - bs (optional): batchsize
-        - alpha (optional): l2 weight decay
-        - beta (optional): l1 weight decay
-        - silent: whether to silence output or not
-
-        Usage:
-        ```
-        model = Model(train_df)
-        model.fit(train_df)
-        y = model.predict(test_df)
-        ```
-        """
         super().__init__()
         self.moments = get_moments(df.copy())
 
