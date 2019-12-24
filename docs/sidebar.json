@@ -1,6 +1,10 @@
 {
   "profetorch": {
     "Overview": "/",
-    "Title": "/model"
+    "Title": "/callbacks",
+    "Blocks": "/blocks",
+    "Data": "/data",
+    "Losses": "/losses",
+    "Base Model": "/model"
   }
 }

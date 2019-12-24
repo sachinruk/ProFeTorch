@@ -1,10 +1,10 @@
 ---
 
-title: Title
+title: Base Model
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "summary"
+summary: "This class contains the base which is used to train data upon."
 ---
 <!--
 
@@ -20,13 +20,6 @@ summary: "summary"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Base-Model">Base Model<a class="anchor-link" href="#Base-Model">&#182;</a></h1><p>This class contains the base which is used to train data upon.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -45,27 +38,22 @@ summary: "summary"
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="Model" class="doc_header"><code>class</code> <code>Model</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/model.py#L22" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Model</code>(<strong><code>df</code></strong>, <strong><code>model</code></strong>=<em><code>None</code></em>, <strong><code>model_args</code></strong>=<em><code>None</code></em>, <strong><code>quantiles</code></strong>=<em><code>[0.05, 0.5, 0.95]</code></em>, <strong><code>loss</code></strong>=<em><code>None</code></em>, <strong><code>bs</code></strong>=<em><code>128</code></em>, <strong><code>epochs</code></strong>=<em><code>100</code></em>, <strong><code>lr</code></strong>=<em><code>0.3</code></em>, <strong><code>alpha</code></strong>=<em><code>0</code></em>, <strong><code>beta</code></strong>=<em><code>0.1</code></em>, <strong><code>silent</code></strong>=<em><code>True</code></em>) :: <code>Module</code></p>
 </blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
+<p>Default Model Wrapper
+parameters:</p>
+<ul>
+<li>df: dataset used in training dataset.</li>
+<li>model (optional): how to model time series. Default: DefaultModel.</li>
+<li>loss (optional): loss function: Default l1 loss.</li>
+<li>bs (optional): batchsize</li>
+<li>alpha (optional): l2 weight decay</li>
+<li>beta (optional): l1 weight decay</li>
+<li>silent: whether to silence output or not</li>
+</ul>
+<p>Usage:</p>
 
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
+<pre><code>model = Model(train_df)
+model.fit(train_df)
+y = model.predict(test_df)</code></pre>
 
 </div>
 

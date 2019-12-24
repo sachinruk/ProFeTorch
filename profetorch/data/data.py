@@ -15,6 +15,9 @@ tt = torch.Tensor
 #Cell
 _MILISECONDS_IN_DAY = 1e9*3600*24
 def convert_date(dates):
+    """
+    Converts pandas date format to torch Tensors (floats)
+    """
     dates = dates.astype(int) / _MILISECONDS_IN_DAY
     return torch.Tensor(dates).reshape(-1,1)
 
@@ -78,6 +81,9 @@ def create_tensors(df, moments, predict=False):
 
 #Cell
 class TimeSeries(Dataset):
+    """
+    Load raw x,y data
+    """
     def __init__(self, x, y):
         super().__init__()
         self.x, self.y = x, y
@@ -89,6 +95,9 @@ class TimeSeries(Dataset):
         return torch.Tensor([self.x[i]]), torch.Tensor([self.y[i]])
 
 class DataFrame(Dataset):
+    """
+    Take a data frame with columns ds | y | other_cols and convert to pytorch tensors.
+    """
     def __init__(self, df, moments=None):
         super().__init__()
         self.data, self.moments = create_tensors(df, moments)
@@ -104,6 +113,9 @@ class DataFrame(Dataset):
 
 #Cell
 def create_db(df, train_p=0.8, bs=96, moments=None):
+    """
+    Take dataframe and convert to Fastai databunch
+    """
     train_len = int(train_p*len(df))
     df.reset_index(drop=True, inplace=True)
     train_ds = DataFrame(df.iloc[:train_len], moments)
