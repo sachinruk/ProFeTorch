@@ -101,3 +101,4 @@ plt.show()
 Obviously more works needs to be done as seen in the graph above. However, note that:
 1. The seasonal component is captured.
 2. The quantiles are asymmetric, which cannot happen in the fb-prophet case.
+3. **I will fix these short comings if there is enough interest.**
