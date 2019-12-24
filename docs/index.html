@@ -29,7 +29,7 @@ summary: "FB Prophet + Fastai + pyTorch."
 <li>Strict(er) upper and lower bounds.</li>
 <li>Can add any other set of features to the time series.</li>
 </ul>
-<p>The time series is implemented as follows:
+<p>The time series is implemented as follows:</p>
 \begin{aligned}
 y &amp;= b(T(t) + S(t) + F(x)|l,u) \\
 T(t) &amp;= mt + a \\
@@ -40,8 +40,7 @@ l \quad \text{if } y &lt; l \\
 y \quad \text{if } l &lt; y &lt; u \\
 u \quad \text{if } y &gt; u
 \end{cases}
-\end{aligned}
-where $T(t)$ is the trend line, $S(t)$ are the seasonal components composed of a fourier sum, $F(x)$ is a linear function which weights features that is not related to time.</p>
+\end{aligned}<p>where $T(t)$ is the trend line, $S(t)$ are the seasonal components composed of a fourier sum, $F(x)$ is a linear function which weights features that is not related to time.</p>
 <p>The task is therefore to find the parameters $a, m, \cup_n a_n, \cup_n b_n, w$ that minimises a loss function $l(\hat{y}, y)$. The default is set to minimise $l1$ loss $\frac{1}{N}\sum_{i=1}^N |y_i - \hat{y_i}|$ so that the reliance on outliers is minimised. By default we also calculate the 5th and 95th quantile by minimising the tilted loss function. The quantile functions are calculated as:
 \begin{align}
 y_5 &amp;= b(\hat{y} - (m_5 t + a_5)|l,u) \\
