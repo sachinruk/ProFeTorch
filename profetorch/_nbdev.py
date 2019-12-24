@@ -3,15 +3,17 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"Trend": "blocks.ipynb",
+         "LinearX": "blocks.ipynb",
          "FourierModel": "blocks.ipynb",
          "Seasonal": "blocks.ipynb",
-         "Squasher": "blocks.ipynb",
          "Holiday": "blocks.ipynb",
          "HolidayRange": "blocks.ipynb",
-         "LinearX": "blocks.ipynb",
+         "Squasher": "blocks.ipynb",
          "RandomWalk": "blocks.ipynb",
          "DefaultModel": "blocks.ipynb",
          "DefaultQModel": "blocks.ipynb",
+         "L1Loss": "callbacks.ipynb",
+         "PrintLoss": "callbacks.ipynb",
          "torch.Tensor.ndim": "data.ipynb",
          "tt": "data.ipynb",
          "convert_date": "data.ipynb",
@@ -19,10 +21,19 @@ index = {"Trend": "blocks.ipynb",
          "create_tensors": "data.ipynb",
          "TimeSeries": "data.ipynb",
          "DataFrame": "data.ipynb",
-         "create_db": "data.ipynb"}
+         "create_db": "data.ipynb",
+         "mse": "losses.ipynb",
+         "mae": "losses.ipynb",
+         "q_loss": "losses.ipynb",
+         "tilted_loss": "losses.ipynb",
+         "weighted_loss": "losses.ipynb",
+         "Model": "model.ipynb"}
 
 modules = ["model/blocks.py",
-           "data/data.py"]
+           "callbacks/callbacks.py",
+           "data/data.py",
+           "losses.py",
+           "model/model.py"]
 
 git_url = "https://github.com/fastai/profetorch/tree/master/"
 

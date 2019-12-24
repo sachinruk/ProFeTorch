@@ -24,6 +24,12 @@ summary: "summary"
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Linear-Models:">Linear Models:<a class="anchor-link" href="#Linear-Models:">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
@@ -50,6 +56,9 @@ summary: "summary"
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -57,7 +66,90 @@ summary: "summary"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="FourierModel" class="doc_header"><code>class</code> <code>FourierModel</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L77" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FourierModel</code>(<strong><code>p</code></strong>:<code>float</code>=<em><code>365.25</code></em>, <strong><code>scale</code></strong>:<code>float</code>=<em><code>1</code></em>, <strong><code>n</code></strong>:<code>int</code>=<em><code>7</code></em>) :: <code>Module</code></p>
+<h2 id="LinearX" class="doc_header"><code>class</code> <code>LinearX</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L76" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LinearX</code>(<strong><code>dims</code></strong>) :: <code>Module</code></p>
+</blockquote>
+<p>Linear model of non-time based inputs.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Periodic-Functions">Periodic Functions<a class="anchor-link" href="#Periodic-Functions">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="FourierModel" class="doc_header"><code>class</code> <code>FourierModel</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L94" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FourierModel</code>(<strong><code>p</code></strong>:<code>float</code>=<em><code>365.25</code></em>, <strong><code>scale</code></strong>:<code>float</code>=<em><code>1</code></em>, <strong><code>n</code></strong>:<code>int</code>=<em><code>7</code></em>) :: <code>Module</code></p>
+</blockquote>
+<p>Block that outputs sin's and cos' as basis functions.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Seasonal" class="doc_header"><code>class</code> <code>Seasonal</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L123" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Seasonal</code>(<strong><code>y_n</code></strong>=<em><code>7</code></em>, <strong><code>m_n</code></strong>=<em><code>5</code></em>, <strong><code>w_n</code></strong>=<em><code>0</code></em>, <strong><code>y_p</code></strong>=<em><code>365.25</code></em>, <strong><code>m_p</code></strong>=<em><code>30.5</code></em>, <strong><code>w_p</code></strong>=<em><code>7</code></em>, <strong><code>scale</code></strong>=<em><code>1</code></em>) :: <code>Module</code></p>
+</blockquote>
+<p>Combination of Fourier Blocks that gives weekly, monthly and
+yearly seasonality.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Holiday-Functions">Holiday Functions<a class="anchor-link" href="#Holiday-Functions">&#182;</a></h2><p>Can use <a href="/#LinearX"><code>LinearX</code></a> instead. For instance <code>df['June'] = df.ds.dt.month==6</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Holiday" class="doc_header"><code>class</code> <code>Holiday</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L139" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Holiday</code>(<strong><code>holiday</code></strong>, <strong><code>repeat_every</code></strong>=<em><code>365</code></em>, <strong><code>mean</code></strong>=<em><code>0</code></em>, <strong><code>scale</code></strong>=<em><code>1</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Base class for all neural network modules.</p>
 <p>Your models should also subclass this class.</p>
@@ -98,7 +190,78 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Seasonal" class="doc_header"><code>class</code> <code>Seasonal</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L103" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Seasonal</code>(<strong><code>y_n</code></strong>=<em><code>7</code></em>, <strong><code>m_n</code></strong>=<em><code>5</code></em>, <strong><code>w_n</code></strong>=<em><code>0</code></em>, <strong><code>y_p</code></strong>=<em><code>365.25</code></em>, <strong><code>m_p</code></strong>=<em><code>30.5</code></em>, <strong><code>w_p</code></strong>=<em><code>7</code></em>, <strong><code>scale</code></strong>=<em><code>1</code></em>) :: <code>Module</code></p>
+<h2 id="HolidayRange" class="doc_header"><code>class</code> <code>HolidayRange</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L151" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HolidayRange</code>(<strong><code>holidays</code></strong>) :: <code>Module</code></p>
+</blockquote>
+<p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes::</p>
+
+<pre><code>import torch.nn as nn
+import torch.nn.functional as F
+
+class Model(nn.Module):
+    def __init__(self):
+        super(Model, self).__init__()
+        self.conv1 = nn.Conv2d(1, 20, 5)
+        self.conv2 = nn.Conv2d(20, 20, 5)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        return F.relu(self.conv2(x))
+
+</code></pre>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call :meth:<code>to</code>, etc.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Miscellaneous">Miscellaneous<a class="anchor-link" href="#Miscellaneous">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Squasher" class="doc_header"><code>class</code> <code>Squasher</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L165" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Squasher</code>(<strong><code>low</code></strong>=<em><code>None</code></em>, <strong><code>high</code></strong>=<em><code>None</code></em>, <strong><code>mean</code></strong>=<em><code>0</code></em>, <strong><code>sd</code></strong>=<em><code>1</code></em>, <strong><code>alpha</code></strong>=<em><code>0.01</code></em>) :: <code>Module</code></p>
+</blockquote>
+<p>Squashes output to lie beween <code>high</code> and <code>low</code>.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="RandomWalk" class="doc_header"><code>class</code> <code>RandomWalk</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L185" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>RandomWalk</code>(<strong><code>n</code></strong>, <strong><code>breaks</code></strong>) :: <code>Module</code></p>
 </blockquote>
 <p>Base class for all neural network modules.</p>
 <p>Your models should also subclass this class.</p>
@@ -132,6 +295,9 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -139,29 +305,9 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Squasher" class="doc_header"><code>class</code> <code>Squasher</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L115" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Squasher</code>(<strong><code>low</code></strong>=<em><code>None</code></em>, <strong><code>high</code></strong>=<em><code>None</code></em>, <strong><code>mean</code></strong>=<em><code>0</code></em>, <strong><code>sd</code></strong>=<em><code>1</code></em>, <strong><code>alpha</code></strong>=<em><code>0.01</code></em>) :: <code>Module</code></p>
+<h2 id="DefaultModel" class="doc_header"><code>class</code> <code>DefaultModel</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L197" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DefaultModel</code>(<strong><code>moments</code></strong>, <strong><code>breakpoints</code></strong>=<em><code>None</code></em>, <strong><code>y_n</code></strong>=<em><code>7</code></em>, <strong><code>m_n</code></strong>=<em><code>5</code></em>, <strong><code>w_n</code></strong>=<em><code>0</code></em>, <strong><code>l</code></strong>=<em><code>None</code></em>, <strong><code>h</code></strong>=<em><code>None</code></em>) :: <code>Module</code></p>
 </blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
-
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
+<p>Sum of Linear Trend, Seasonality and squashed.</p>
 
 </div>
 
@@ -180,234 +326,9 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Holiday" class="doc_header"><code>class</code> <code>Holiday</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L132" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Holiday</code>(<strong><code>holiday</code></strong>, <strong><code>repeat_every</code></strong>=<em><code>365</code></em>, <strong><code>mean</code></strong>=<em><code>0</code></em>, <strong><code>scale</code></strong>=<em><code>1</code></em>) :: <code>Module</code></p>
+<h2 id="DefaultQModel" class="doc_header"><code>class</code> <code>DefaultQModel</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L218" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DefaultQModel</code>(<strong><code>moments</code></strong>, <strong><code>breakpoints</code></strong>=<em><code>None</code></em>, <strong><code>y_n</code></strong>=<em><code>7</code></em>, <strong><code>m_n</code></strong>=<em><code>5</code></em>, <strong><code>w_n</code></strong>=<em><code>0</code></em>, <strong><code>l</code></strong>=<em><code>None</code></em>, <strong><code>h</code></strong>=<em><code>None</code></em>, <strong><code>quantiles</code></strong>=<em><code>[0.05, 0.5, 0.95]</code></em>) :: <code>Module</code></p>
 </blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
-
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="HolidayRange" class="doc_header"><code>class</code> <code>HolidayRange</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L144" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HolidayRange</code>(<strong><code>holidays</code></strong>) :: <code>Module</code></p>
-</blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
-
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="LinearX" class="doc_header"><code>class</code> <code>LinearX</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L158" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LinearX</code>(<strong><code>dims</code></strong>) :: <code>Module</code></p>
-</blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
-
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="RandomWalk" class="doc_header"><code>class</code> <code>RandomWalk</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L171" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>RandomWalk</code>(<strong><code>n</code></strong>, <strong><code>breaks</code></strong>) :: <code>Module</code></p>
-</blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
-
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="DefaultModel" class="doc_header"><code>class</code> <code>DefaultModel</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L183" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DefaultModel</code>(<strong><code>moments</code></strong>, <strong><code>breakpoints</code></strong>=<em><code>None</code></em>, <strong><code>y_n</code></strong>=<em><code>7</code></em>, <strong><code>m_n</code></strong>=<em><code>5</code></em>, <strong><code>w_n</code></strong>=<em><code>0</code></em>, <strong><code>l</code></strong>=<em><code>None</code></em>, <strong><code>h</code></strong>=<em><code>None</code></em>) :: <code>Module</code></p>
-</blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
-
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="DefaultQModel" class="doc_header"><code>class</code> <code>DefaultQModel</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/model/blocks.py#L201" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DefaultQModel</code>(<strong><code>moments</code></strong>, <strong><code>breakpoints</code></strong>=<em><code>None</code></em>, <strong><code>y_n</code></strong>=<em><code>7</code></em>, <strong><code>m_n</code></strong>=<em><code>5</code></em>, <strong><code>w_n</code></strong>=<em><code>0</code></em>, <strong><code>l</code></strong>=<em><code>None</code></em>, <strong><code>h</code></strong>=<em><code>None</code></em>, <strong><code>quantiles</code></strong>=<em><code>[0.05, 0.5, 0.95]</code></em>) :: <code>Module</code></p>
-</blockquote>
-<p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing to nest them in
-a tree structure. You can assign the submodules as regular attributes::</p>
-
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-class Model(nn.Module):
-    def __init__(self):
-        super(Model, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will have their
-parameters converted too when you call :meth:<code>to</code>, etc.</p>
+<p>Same as DefaultModel but with multiple outputs corresponding to quantiles</p>
 
 </div>
 
@@ -439,7 +360,10 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 <pre>Converted 00_core.ipynb.
 Converted 99_index.ipynb.
 Converted blocks.ipynb.
+Converted callbacks.ipynb.
 Converted data.ipynb.
+Converted losses.ipynb.
+Converted model.ipynb.
 </pre>
 </div>
 </div>

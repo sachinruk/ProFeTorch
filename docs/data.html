@@ -108,7 +108,7 @@ summary: "summary"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="TimeSeries" class="doc_header"><code>class</code> <code>TimeSeries</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/data/data.py#L77" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeSeries</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>) :: <code>Dataset</code></p>
+<h2 id="TimeSeries" class="doc_header"><code>class</code> <code>TimeSeries</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/data/data.py#L80" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>TimeSeries</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>) :: <code>Dataset</code></p>
 </blockquote>
 <p>An abstract class representing a :class:<code>Dataset</code>.</p>
 <p>All datasets that represent a map from keys to data samples should subclass
@@ -139,7 +139,7 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DataFrame" class="doc_header"><code>class</code> <code>DataFrame</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/data/data.py#L88" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DataFrame</code>(<strong><code>df</code></strong>, <strong><code>moments</code></strong>=<em><code>None</code></em>) :: <code>Dataset</code></p>
+<h2 id="DataFrame" class="doc_header"><code>class</code> <code>DataFrame</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/data/data.py#L91" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DataFrame</code>(<strong><code>df</code></strong>, <strong><code>moments</code></strong>=<em><code>None</code></em>) :: <code>Dataset</code></p>
 </blockquote>
 <p>An abstract class representing a :class:<code>Dataset</code>.</p>
 <p>All datasets that represent a map from keys to data samples should subclass
@@ -180,7 +180,7 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_db" class="doc_header"><code>create_db</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/data/data.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_db</code>(<strong><code>df</code></strong>, <strong><code>train_p</code></strong>=<em><code>0.8</code></em>, <strong><code>bs</code></strong>=<em><code>96</code></em>, <strong><code>moments</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="create_db" class="doc_header"><code>create_db</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/data/data.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_db</code>(<strong><code>df</code></strong>, <strong><code>train_p</code></strong>=<em><code>0.8</code></em>, <strong><code>bs</code></strong>=<em><code>96</code></em>, <strong><code>moments</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -213,7 +213,10 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 <pre>Converted 00_core.ipynb.
 Converted 99_index.ipynb.
 Converted blocks.ipynb.
+Converted callbacks.ipynb.
 Converted data.ipynb.
+Converted losses.ipynb.
+Converted model.ipynb.
 </pre>
 </div>
 </div>
@@ -227,7 +230,7 @@ Converted data.ipynb.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev</span> <span class="k">import</span> <span class="n">export2html</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export2html</span> <span class="k">import</span> <span class="n">notebook2html</span>
 </pre></div>
 
     </div>
@@ -240,7 +243,7 @@ Converted data.ipynb.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">export2html</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">notebook2html</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -252,14 +255,15 @@ Converted data.ipynb.
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-22-88af54dba99c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>export2html<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: &#39;module&#39; object is not callable</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>converting: /Users/sachin/Google Drive/uniwork/ProFeTorch1/callbacks.ipynb
+converting: /Users/sachin/Google Drive/uniwork/ProFeTorch1/data.ipynb
+converting: /Users/sachin/Google Drive/uniwork/ProFeTorch1/blocks.ipynb
+converting: /Users/sachin/Google Drive/uniwork/ProFeTorch1/model.ipynb
+converting: /Users/sachin/Google Drive/uniwork/ProFeTorch1/99_index.ipynb
+converting: /Users/sachin/Google Drive/uniwork/ProFeTorch1/losses.ipynb
+converting: /Users/sachin/Google Drive/uniwork/ProFeTorch1/00_core.ipynb
+</pre>
 </div>
 </div>
 

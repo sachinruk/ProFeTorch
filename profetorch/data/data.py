@@ -63,6 +63,9 @@ def create_tensors(df, moments, predict=False):
         df.drop(['y'], axis=1, inplace=True)
         data['y'] = y
 
+    if predict and 'y' in df.columns:
+        df.drop(['y'], axis=1, inplace=True)
+
     # add x if it's available
     if df.shape[1] > 0:
         x = torch.Tensor(df.values).float()
