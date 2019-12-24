@@ -22,6 +22,7 @@ def mae(y_pred, y, weights=None):
 
 def q_loss(y_pred, y, quantiles = [0.05, 0.5, 0.95], weights=None):
     """
+    Sum of tilted_loss
     y_pred: Predicted Value
     y: Target
     quantiles: Quantile
@@ -37,9 +38,11 @@ def q_loss(y_pred, y, quantiles = [0.05, 0.5, 0.95], weights=None):
 
 def tilted_loss(y_pred, y, q=0.5):
     """
-    y_pred: Predicted Value
-    y: Target
-    q: Quantile
+    Loss function used to obtain quantile `q`.
+    Parameters:
+    - y_pred: Predicted Value
+    - y: Target
+    - q: Quantile
     """
     e = (y - y_pred)
     return q * torch.clamp_min(e, 0) + (1-q) * torch.clamp_min(-e, 0)

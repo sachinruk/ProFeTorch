@@ -24,20 +24,12 @@ summary: "Loss functions used in profetorch."
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The most important loss function used is the tilted loss function.</p>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="o">.</span><span class="n">ndim</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">dim</span><span class="p">())</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -95,7 +87,8 @@ summary: "Loss functions used in profetorch."
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="q_loss" class="doc_header"><code>q_loss</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/losses.py#L23" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>q_loss</code>(<strong><code>y_pred</code></strong>, <strong><code>y</code></strong>, <strong><code>quantiles</code></strong>=<em><code>[0.05, 0.5, 0.95]</code></em>, <strong><code>weights</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>y_pred: Predicted Value
+<p>Sum of tilted_loss
+y_pred: Predicted Value
 y: Target
 quantiles: Quantile
 weights(optional): Weighting of prediction-target pair.</p>
@@ -117,11 +110,15 @@ weights(optional): Weighting of prediction-target pair.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tilted_loss" class="doc_header"><code>tilted_loss</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/losses.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tilted_loss</code>(<strong><code>y_pred</code></strong>, <strong><code>y</code></strong>, <strong><code>q</code></strong>=<em><code>0.5</code></em>)</p>
+<h4 id="tilted_loss" class="doc_header"><code>tilted_loss</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/losses.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tilted_loss</code>(<strong><code>y_pred</code></strong>, <strong><code>y</code></strong>, <strong><code>q</code></strong>=<em><code>0.5</code></em>)</p>
 </blockquote>
-<p>y_pred: Predicted Value
-y: Target
-q: Quantile</p>
+<p>Loss function used to obtain quantile <code>q</code>.
+Parameters:</p>
+<ul>
+<li>y_pred: Predicted Value</li>
+<li>y: Target</li>
+<li>q: Quantile</li>
+</ul>
 
 </div>
 
@@ -140,7 +137,7 @@ q: Quantile</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="weighted_loss" class="doc_header"><code>weighted_loss</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/losses.py#L47" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>weighted_loss</code>(<strong><code>loss</code></strong>, <strong><code>weights</code></strong>)</p>
+<h4 id="weighted_loss" class="doc_header"><code>weighted_loss</code><a href="https://github.com/fastai/profetorch/tree/master/profetorch/losses.py#L50" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>weighted_loss</code>(<strong><code>loss</code></strong>, <strong><code>weights</code></strong>)</p>
 </blockquote>
 <p>Weighted loss</p>
 

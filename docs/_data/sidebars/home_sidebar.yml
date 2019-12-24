@@ -11,10 +11,13 @@ entries:
       url: /
     - output: web,pdf
       title: Title
-      url: /callbacks
+      url: /core
     - output: web,pdf
       title: Blocks
       url: /blocks
+    - output: web,pdf
+      title: Callbacks
+      url: /callbacks
     - output: web,pdf
       title: Data
       url: /data
