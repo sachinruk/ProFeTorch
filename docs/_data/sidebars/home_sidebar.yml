@@ -10,9 +10,6 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Title
-      url: /core
-    - output: web,pdf
       title: Blocks
       url: /blocks
     - output: web,pdf
