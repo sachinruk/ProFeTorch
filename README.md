@@ -19,7 +19,7 @@ This is an alternative implementation of prophet which uses quantile regression 
 - Can add any other set of features to the time series.
 
 The time series is implemented as follows:
-
+$$
 \begin{aligned}
 y &= b(T(t) + S(t) + F(x)|l,u) \\
 T(t) &= mt + a \\
@@ -31,6 +31,7 @@ y \quad \text{if } l < y < u \\
 u \quad \text{if } y > u
 \end{cases}
 \end{aligned}
+$$
 
 where $T(t)$ is the trend line, $S(t)$ are the seasonal components composed of a fourier sum, $F(x)$ is a linear function which weights features that is not related to time.
 
@@ -68,7 +69,7 @@ model.fit(train_df)
 
 
 
-    Epoch 30/30 Training Loss: 0.3687, Validation Loss: 0.6105
+    Epoch 30/30 Training Loss: 0.3721, Validation Loss: 0.5973
 
 </div>
 
@@ -91,7 +92,7 @@ plt.show()
 <div class="output_area" markdown="1">
 
 
-![png](output_5_0.png)
+![png](docs/images/output_5_0.png)
 
 
 </div>
