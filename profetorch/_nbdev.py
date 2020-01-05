@@ -35,7 +35,7 @@ modules = ["model/blocks.py",
            "losses.py",
            "model/model.py"]
 
-doc_url = "https://sachinruk.github.io/ProFeTorch/"
+doc_url = "https://sachinruk.github.io/ProFeTorch"
 
 git_url = "https://github.com/sachinruk/profetorch/tree/master/"
 
