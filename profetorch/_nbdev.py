@@ -2,19 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"Trend": "blocks.ipynb",
-         "LinearX": "blocks.ipynb",
-         "FourierModel": "blocks.ipynb",
-         "Seasonal": "blocks.ipynb",
-         "Holiday": "blocks.ipynb",
-         "HolidayRange": "blocks.ipynb",
-         "Squasher": "blocks.ipynb",
-         "RandomWalk": "blocks.ipynb",
+index = {"torch.Tensor.ndim": "data.ipynb",
+         "FourierModel": "Fourier.ipynb",
+         "Seasonal": "Fourier.ipynb",
+         "Holiday": "Holidays.ipynb",
+         "HolidayRange": "Holidays.ipynb",
+         "LinearX": "LinearX.ipynb",
+         "Squasher": "Squasher.ipynb",
+         "Trend": "Trend.ipynb",
          "DefaultModel": "blocks.ipynb",
          "DefaultQModel": "blocks.ipynb",
          "L1Loss": "callbacks.ipynb",
          "PrintLoss": "callbacks.ipynb",
-         "torch.Tensor.ndim": "data.ipynb",
          "tt": "data.ipynb",
          "convert_date": "data.ipynb",
          "get_moments": "data.ipynb",
@@ -29,13 +28,18 @@ index = {"Trend": "blocks.ipynb",
          "weighted_loss": "losses.ipynb",
          "Model": "model.ipynb"}
 
-modules = ["model/blocks.py",
+modules = ["blocks/fourier.py",
+           "blocks/holidays.py",
+           "blocks/linearX.py",
+           "blocks/squasher.py",
+           "blocks/trend.py",
+           "blocks/blocks.py",
            "callbacks/callbacks.py",
-           "data/data.py",
+           "data.py",
            "losses.py",
-           "model/model.py"]
+           "model.py"]
 
-doc_url = "https://sachinruk.github.io/ProFeTorch"
+doc_url = "https://sachinruk.github.io/ProFeTorch/"
 
 git_url = "https://github.com/sachinruk/profetorch/tree/master/"
 
