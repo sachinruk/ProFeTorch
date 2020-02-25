@@ -60,11 +60,18 @@ model.fit(train_df)
 </div>
 <div class="output_area" markdown="1">
 
+    /opt/miniconda3/lib/python3.7/site-packages/pandas/core/frame.py:4117: SettingWithCopyWarning: 
+    A value is trying to be set on a copy of a slice from a DataFrame
+    
+    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+      errors=errors,
 
 
 
 
-    Epoch 30/30 Training Loss: 0.3686, Validation Loss: 0.6357
+
+
+    Epoch 30/30 Training Loss: 0.3680, Validation Loss: 0.5957
 
 </div>
 
@@ -88,6 +95,62 @@ plt.show()
 
 
 ![png](docs/images/output_5_0.png)
+
+
+</div>
+
+</div>
+<div class="codecell" markdown="1">
+<div class="input_area" markdown="1">
+
+```python
+model.plot_components()
+```
+
+</div>
+<div class="output_area" markdown="1">
+
+
+![png](docs/images/output_6_0.png)
+
+
+</div>
+
+</div>
+<div class="codecell" markdown="1">
+<div class="input_area" markdown="1">
+
+```python
+list(model.named_parameters())
+```
+
+</div>
+<div class="output_area" markdown="1">
+
+
+
+
+    [('model.models.0.trend.init_layer.weight', Parameter containing:
+      tensor([[0.0235]], requires_grad=True)),
+     ('model.models.0.trend.init_layer.bias', Parameter containing:
+      tensor([0.0338], requires_grad=True)),
+     ('model.models.1.trend.init_layer.weight', Parameter containing:
+      tensor([[0.3881]], requires_grad=True)),
+     ('model.models.1.trend.init_layer.bias', Parameter containing:
+      tensor([0.0006], requires_grad=True)),
+     ('model.models.1.seasonal.yearly.linear.weight', Parameter containing:
+      tensor([[-0.2984,  0.0334, -0.1572, -0.0445,  0.0025,  0.0630,  0.0033, -0.0534,
+                0.0085,  0.0018, -0.6378, -0.1152,  0.1973,  0.1215,  0.0867, -0.0102,
+               -0.0279, -0.0918, -0.0109, -0.0809]], requires_grad=True)),
+     ('model.models.1.seasonal.monthly.linear.weight', Parameter containing:
+      tensor([[-0.0315,  0.0295,  0.0279, -0.0243, -0.0060, -0.0025,  0.0127,  0.0304,
+               -0.0582,  0.0004,  0.0020,  0.0055,  0.0186, -0.0176]],
+             requires_grad=True)),
+     ('model.models.2.trend.init_layer.weight', Parameter containing:
+      tensor([[0.2818]], requires_grad=True)),
+     ('model.models.2.trend.init_layer.bias', Parameter containing:
+      tensor([0.9838], requires_grad=True))]
+
 
 
 </div>

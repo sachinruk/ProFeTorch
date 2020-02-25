@@ -165,29 +165,6 @@ parameters:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # hide</span>
-<span class="c1"># class TimeSeries(Dataset):</span>
-<span class="c1">#     def __init__(self, x, y):</span>
-<span class="c1">#         super().__init__()</span>
-<span class="c1">#         self.x, self.y = x, y</span>
-        
-<span class="c1">#     def __len__(self):</span>
-<span class="c1">#         return len(self.y)</span>
-    
-<span class="c1">#     def __getitem__(self, i):</span>
-<span class="c1">#         return torch.Tensor([self.x[i]]), torch.Tensor([self.y[i]])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">FourierModel</span><span class="p">()</span>
 <span class="n">learner</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_func</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">l1_loss</span><span class="p">)</span>
 <span class="n">wd</span> <span class="o">=</span> <span class="mi">0</span>

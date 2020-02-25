@@ -80,3 +80,8 @@ class Model(nn.Module):
                           wd=self.alpha,
                           silent=True)
         return learner
+
+    def plot_components(self):
+        idx = self.quantiles.index(0.5)
+        median = self.model.models[idx]
+        median.seasonal.plot_components()
