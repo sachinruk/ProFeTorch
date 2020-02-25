@@ -10,6 +10,21 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Fourier Series
+      url: /Fourier
+    - output: web,pdf
+      title: Holidays
+      url: /Holidays
+    - output: web,pdf
+      title: LinearX
+      url: /LinearX
+    - output: web,pdf
+      title: Squasher
+      url: /Squasher
+    - output: web,pdf
+      title: Trend
+      url: /Trend
+    - output: web,pdf
       title: Blocks
       url: /blocks
     - output: web,pdf

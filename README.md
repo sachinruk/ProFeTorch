@@ -53,25 +53,18 @@ $$
 
 ```python
 model_params = {'y_n':10, 'm_n':7, 'l':0, 'h': train_df['y'].max() * 2}
-model = Model(train_df, model_args=model_params, epochs=30, alpha=1e-2, beta=0)
+model = Model(model_args=model_params, epochs=30, alpha=1e-2)
 model.fit(train_df)
 ```
 
 </div>
 <div class="output_area" markdown="1">
 
-    /opt/miniconda3/lib/python3.7/site-packages/pandas/core/frame.py:4117: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      errors=errors,
 
 
 
 
-
-
-    Epoch 30/30 Training Loss: 0.3721, Validation Loss: 0.5973
+    Epoch 30/30 Training Loss: 0.3686, Validation Loss: 0.6357
 
 </div>
 
